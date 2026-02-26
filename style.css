@@ -99,3 +99,7 @@ footer {
     margin-right: 1rem;
   }
 }
+/* --- Black Text Styling --- */
+section, p, h1, h2, h3, li {
+  color: #000000;
+}
