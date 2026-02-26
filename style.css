@@ -43,7 +43,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #001f3f;
+  color: #000000;
   text-decoration: none;
   padding: 0.5rem 1rem;
   font-weight: bold;
@@ -52,7 +52,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-  background-color: #0055a5;
+  background-color: #000000;
   color: white;
   border-radius: 4px;
 }
