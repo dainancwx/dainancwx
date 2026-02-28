@@ -8,17 +8,21 @@
 </head>
 <body>
  <header>
-<div class="logo-text">Dainan Caywood WX</div>
+  <div class="logo-text">Dainan Caywood WX</div>
+
+  <div class="menu-toggle" id="mobile-menu">
+    ☰
+  </div>
+
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About Me</a></li>
+    <ul class="nav-links">
+      <li><a href="/dainancwx/">Home</a></li>
+      <li><a href="/dainancwx/projects/">Projects</a></li>
+      <li><a href="/dainancwx/gallery/">Gallery</a></li>
+      <li><a href="/dainancwx/about/">About Me</a></li>
     </ul>
   </nav>
 </header>
-
   <main>
     <section id="hero">
       <h1>Dainan Caywood</h1>
@@ -81,5 +85,13 @@
 </div>
 
 </footer>
+<script>
+  const menu = document.getElementById("mobile-menu");
+  const navLinks = document.querySelector(".nav-links");
+
+  menu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
 </body>
 </html>
