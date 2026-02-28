@@ -101,8 +101,9 @@ section, p, h1, h2, h3, li {
 }
 
 /* =========================
-   MOBILE NAVIGATION
+   MOBILE NAVIGATION FIX
 ========================= */
+
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -112,11 +113,20 @@ section, p, h1, h2, h3, li {
 /* Mobile Only */
 @media (max-width: 768px) {
 
-  /* Keep header in ONE row */
   header {
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+  }
+
+  /* Hide desktop nav layout */
+  nav {
+    position: static;
+  }
+
+  .nav-links {
+    display: none;
   }
 
   /* Show hamburger */
@@ -124,29 +134,25 @@ section, p, h1, h2, h3, li {
     display: block;
   }
 
-  /* Hide normal nav */
-  .nav-links {
-    display: none;
+  /* Dropdown menu */
+  .nav-links.active {
+    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 80px; /* pushes dropdown below header */
+    top: 100%;
     right: 0;
     width: 100%;
-    background-color: white;
-    padding: 1rem 0;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   }
 
-  .nav-links li {
+  .nav-links.active li {
     text-align: center;
   }
 
-  .nav-links li a {
+  .nav-links.active li a {
     display: block;
     padding: 1rem;
     border-top: 1px solid #ddd;
-  }
-
-  .nav-links.active {
-    display: flex;
   }
 }
