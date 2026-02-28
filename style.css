@@ -118,36 +118,42 @@ section, p, h1, h2, h3, li {
 }
 
 /* =========================
-   HAMBURGER MENU STYLES
+   MOBILE NAVIGATION
 ========================= */
-
 .menu-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
-/* Mobile Layout */
+/* Mobile Only */
 @media (max-width: 768px) {
 
+  /* Keep header in ONE row */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Show hamburger */
   .menu-toggle {
     display: block;
   }
 
-  nav {
-    width: 100%;
-  }
-
+  /* Hide normal nav */
   .nav-links {
     display: none;
     flex-direction: column;
+    position: absolute;
+    top: 80px; /* pushes dropdown below header */
+    right: 0;
     width: 100%;
     background-color: white;
-    margin-top: 1rem;
+    padding: 1rem 0;
   }
 
   .nav-links li {
-    margin: 0;
     text-align: center;
   }
 
