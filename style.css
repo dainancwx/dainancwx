@@ -7,11 +7,12 @@ body {
 
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   background-color: #ffffff;
   padding: 1.2rem 2.5rem;
   position: relative;
+  flex-direction: row !important; /* force one line */
 }
 
 .logo {
