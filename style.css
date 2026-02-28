@@ -102,56 +102,62 @@ section, p, h1, h2, h3, li {
 }
 
 /* =========================
-   MOBILE NAVIGATION FIX
+   RESPONSIVE HEADER
 ========================= */
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Hide hamburger by default */
 .menu-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
-/* Mobile Only */
+/* MOBILE */
 @media (max-width: 768px) {
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-
-  /* Hide desktop nav layout */
-  nav {
-    position: static;
-  }
-
-  .nav-links {
-    display: none;
-  }
 
   /* Show hamburger */
   .menu-toggle {
     display: block;
   }
 
-  /* Dropdown menu */
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
+  /* Remove nav from header row */
+  nav {
     position: absolute;
     top: 100%;
     right: 0;
     width: 100%;
+  }
+
+  /* Hide links by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
     background: white;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   }
 
-  .nav-links.active li {
+  /* Show when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
     text-align: center;
   }
 
-  .nav-links.active li a {
+  .nav-links li a {
     display: block;
     padding: 1rem;
     border-top: 1px solid #ddd;
