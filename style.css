@@ -58,13 +58,16 @@ nav ul {
 }
 
 nav ul li a {
+  position: relative;
   text-decoration: none;
   padding: 0.5rem 1rem;
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
+  overflow: hidden;
+  z-index: 1;
 
-  /* shimmer base */
+  /* Default shimmer text */
   background: linear-gradient(
     90deg,
     #000000 0%,
@@ -79,15 +82,40 @@ nav ul li a {
   -webkit-text-fill-color: transparent;
 
   animation: shimmer 4s linear infinite;
-  transition: background-color 0.3s ease;
 }
 
-/* Hover rectangle */
-nav ul li a:hover,
-nav ul li a.active {
-  background-color: #000000;
+/* Hover background shimmer layer */
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0;
+
+  background: linear-gradient(
+    90deg,
+    #000000 0%,
+    #222222 40%,
+    #555555 50%,
+    #222222 60%,
+    #000000 100%
+  );
+
+  background-size: 200% 100%;
+  transition: opacity 0.3s ease;
 }
 
+/* Hover state */
+nav ul li a:hover {
+  -webkit-text-fill-color: #ffffff; /* solid white text */
+  background: none; /* remove text shimmer */
+}
+
+nav ul li a:hover::before {
+  opacity: 1;
+  animation: shimmer 3s linear infinite;
+}
 /* =========================
    MAIN CONTENT
 ========================= */
