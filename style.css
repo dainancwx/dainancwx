@@ -45,61 +45,67 @@ header {
   animation: shimmer 4s linear infinite;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
-
+/* NAV RESET */
 nav ul {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
   gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li a {
-  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   padding: 0.6rem 1.2rem;
-  font-weight: bold;
   border-radius: 6px;
-  display: inline-block;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  color: black; /* prevent purple links */
+
+  text-decoration: none;
+
+  color: black !important;
+  background: transparent;
+
+  transition: background 0.3s ease;
 }
 
 /* SHIMMER TEXT */
 nav ul li a span {
-  display: inline-block;
-  color: black; /* fallback */
+  display: block;
 
   background: linear-gradient(
     90deg,
-    #000000 0%,
-    #000000 40%,
-    #ffffff 50%,
-    #000000 60%,
-    #000000 100%
+    #000000,
+    #555555,
+    #ffffff,
+    #555555,
+    #000000
   );
 
-  background-size: 200% 100%;
+  background-size: 300%;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: shimmer 4s linear infinite;
+  animation: shimmer 5s linear infinite;
 }
 
 /* HOVER BUTTON */
 nav ul li a:hover {
-  background-color: #000000;
-  border-color: #000000;
+  background: black !important;
 }
 
-/* WHITE TEXT ON HOVER */
+/* HOVER TEXT */
 nav ul li a:hover span {
-  background: none;
-  -webkit-text-fill-color: #ffffff;
-  color: #ffffff;
+  -webkit-text-fill-color: white !important;
+}
+
+/* SHIMMER ANIMATION */
+@keyframes shimmer {
+  from { background-position: 300% 0; }
+  to { background-position: -300% 0; }
 }
 
 /* =========================
