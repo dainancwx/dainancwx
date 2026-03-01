@@ -63,6 +63,7 @@ nav ul li a {
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
+  position: relative;
   transition: background-color 0.3s ease;
 }
 
@@ -86,15 +87,16 @@ nav ul li a span {
   animation: shimmer 4s linear infinite;
 }
 
-/* HOVER BUTTON */
+/* HOVER BUTTON BACKGROUND */
 nav ul li a:hover {
   background-color: #000000;
 }
 
-/* WHITE TEXT ON HOVER */
+/* FORCE WHITE TEXT ON HOVER */
 nav ul li a:hover span {
   background: none;
   -webkit-text-fill-color: #ffffff;
+  color: #ffffff; /* important fallback */
 }
 /* =========================
    MAIN CONTENT
