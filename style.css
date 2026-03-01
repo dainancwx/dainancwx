@@ -58,16 +58,18 @@ nav ul {
 }
 
 nav ul li a {
-  position: relative;
   text-decoration: none;
   padding: 0.5rem 1rem;
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
-  overflow: hidden;
-  z-index: 1;
+  transition: background-color 0.3s ease;
+}
 
-  /* Default shimmer text */
+/* SHIMMER TEXT */
+nav ul li a span {
+  display: inline-block;
+
   background: linear-gradient(
     90deg,
     #000000 0%,
@@ -84,37 +86,15 @@ nav ul li a {
   animation: shimmer 4s linear infinite;
 }
 
-/* Hover background shimmer layer */
-nav ul li a::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 4px;
-  z-index: -1;
-  opacity: 0;
-
-  background: linear-gradient(
-    90deg,
-    #000000 0%,
-    #222222 40%,
-    #555555 50%,
-    #222222 60%,
-    #000000 100%
-  );
-
-  background-size: 200% 100%;
-  transition: opacity 0.3s ease;
-}
-
-/* Hover state */
+/* HOVER BUTTON */
 nav ul li a:hover {
-  -webkit-text-fill-color: #ffffff; /* solid white text */
-  background: none; /* remove text shimmer */
+  background-color: #000000;
 }
 
-nav ul li a:hover::before {
-  opacity: 1;
-  animation: shimmer 3s linear infinite;
+/* WHITE TEXT ON HOVER */
+nav ul li a:hover span {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
 }
 /* =========================
    MAIN CONTENT
@@ -207,10 +187,6 @@ footer {
 ========================= */
 
 @keyframes shimmer {
-  from {
-    background-position: -100% 0;
-  }
-  to {
-    background-position: 100% 0;
-  }
+  from { background-position: -100% 0; }
+  to { background-position: 100% 0; }
 }
