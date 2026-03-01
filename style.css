@@ -45,67 +45,68 @@ header {
   animation: shimmer 4s linear infinite;
 }
 
-/* NAV RESET */
+/* ===== NAV RESET ===== */
+
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li a {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    text-decoration: none !important; /* removes dash/underline */
+    color: black !important;
 
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
 
-  text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-  color: black !important;
-  background: transparent;
+    background: transparent;
 
-  transition: background 0.3s ease;
+    transition: background 0.3s ease;
 }
 
-/* SHIMMER TEXT */
+/* ===== SHIMMER TEXT ===== */
+
 nav ul li a span {
-  display: block;
+    background: linear-gradient(
+        90deg,
+        #000000,
+        #555555,
+        #ffffff,
+        #555555,
+        #000000
+    );
 
-  background: linear-gradient(
-    90deg,
-    #000000,
-    #555555,
-    #ffffff,
-    #555555,
-    #000000
-  );
+    background-size: 300%;
 
-  background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  animation: shimmer 5s linear infinite;
+    animation: shimmer 5s linear infinite;
 }
 
-/* HOVER BUTTON */
+/* ===== HOVER BUTTON ===== */
+
 nav ul li a:hover {
-  background: black !important;
+    background: black !important;
 }
 
-/* HOVER TEXT */
+/* White text on hover */
 nav ul li a:hover span {
-  -webkit-text-fill-color: white !important;
+    -webkit-text-fill-color: white !important;
 }
 
-/* SHIMMER ANIMATION */
+/* ===== ANIMATION ===== */
+
 @keyframes shimmer {
-  from { background-position: 300% 0; }
-  to { background-position: -300% 0; }
+    from { background-position: 300% 0; }
+    to { background-position: -300% 0; }
 }
 
 /* =========================
@@ -201,4 +202,28 @@ footer {
 @keyframes shimmer {
   from { background-position: -100% 0; }
   to { background-position: 100% 0; }
+}
+
+/* Remove footer list bullets */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Keep icons inline */
+footer ul li {
+    display: inline-block;
+}
+
+/* Remove link underline */
+footer a {
+    text-decoration: none;
+}
+
+footer div a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
