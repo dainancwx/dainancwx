@@ -163,3 +163,33 @@ header {
     border-top: 1px solid #ddd;
   }
 }
+
+.shimmer-silver{
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #000000 0%,
+        #202020 35%,
+        #ffffff 50%,
+        #202020 65%,
+        #000000 100%
+    );
+
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shimmerMove 6s linear infinite;
+}
+
+@keyframes shimmerMove{
+    0%{
+        background-position: 200% 0;
+    }
+    100%{
+        background-position: -200% 0;
+    }
+}
