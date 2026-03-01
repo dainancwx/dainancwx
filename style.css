@@ -3,10 +3,9 @@
 ========================= */
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #000000, #111111);
-  color: #000;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000000, #111111);
 }
 
 /* =========================
@@ -14,50 +13,51 @@ body {
 ========================= */
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  padding: 1.2rem 2.5rem;
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 1.2rem 2.5rem;
 }
 
-/* Logo text shimmer */
+/* Logo shimmer */
+
 .logo-text {
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
 
-  background: linear-gradient(
-    90deg,
-    #000000 0%,
-    #000000 40%,
-    #ffffff 50%,
-    #000000 60%,
-    #000000 100%
-  );
+    background: linear-gradient(
+        90deg,
+        #000000,
+        #555555,
+        #ffffff,
+        #555555,
+        #000000
+    );
 
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background-size: 300%;
 
-  animation: shimmer 4s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shimmer 5s linear infinite;
 }
 
-/* ===== NAV RESET ===== */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
-    text-decoration: none !important; /* removes dash/underline */
-    color: black !important;
+    text-decoration: none;
+    color: black;
 
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
@@ -66,12 +66,10 @@ nav ul li a {
     align-items: center;
     justify-content: center;
 
-    background: transparent;
-
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-/* ===== SHIMMER TEXT ===== */
+/* Nav shimmer text */
 
 nav ul li a span {
     background: linear-gradient(
@@ -91,22 +89,14 @@ nav ul li a span {
     animation: shimmer 5s linear infinite;
 }
 
-/* ===== HOVER BUTTON ===== */
+/* Hover button */
 
 nav ul li a:hover {
-    background: black !important;
+    background: black;
 }
 
-/* White text on hover */
 nav ul li a:hover span {
-    -webkit-text-fill-color: white !important;
-}
-
-/* ===== ANIMATION ===== */
-
-@keyframes shimmer {
-    from { background-position: 300% 0; }
-    to { background-position: -300% 0; }
+    -webkit-text-fill-color: white;
 }
 
 /* =========================
@@ -114,29 +104,30 @@ nav ul li a:hover span {
 ========================= */
 
 main {
-  padding: 2rem;
+    padding: 2rem;
 }
 
 section {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 2.5rem;
-  margin: 3rem auto;
-  max-width: 950px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 3rem auto;
+    max-width: 950px;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
 section h1::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
-  background: #000000;
-  margin-top: 10px;
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: black;
+    margin-top: 10px;
 }
 
 section, p, h1, h2, h3, li {
-  color: #000000;
+    color: black;
 }
 
 /* =========================
@@ -144,86 +135,81 @@ section, p, h1, h2, h3, li {
 ========================= */
 
 footer {
-  text-align: center;
-  padding: 1rem;
-  background: #ffffff;
-  margin-top: 2rem;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: white;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
     text-align: center;
-  }
-
-  .nav-links li a {
-    display: block;
     padding: 1rem;
-    border-top: 1px solid #ddd;
-  }
-}
-
-/* =========================
-   SHIMMER ANIMATION
-========================= */
-
-@keyframes shimmer {
-  from { background-position: -100% 0; }
-  to { background-position: 100% 0; }
+    background: white;
+    margin-top: 2rem;
 }
 
 /* Remove footer list bullets */
+
 footer ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Keep icons inline */
 footer ul li {
     display: inline-block;
 }
 
-/* Remove link underline */
 footer a {
     text-decoration: none;
-}
-
-footer div a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+    }
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes shimmer {
+    from { background-position: 300% 0; }
+    to { background-position: -300% 0; }
 }
