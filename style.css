@@ -56,6 +56,9 @@ nav ul {
 }
 
 nav ul li a {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+
     text-decoration: none;
     color: black;
 
@@ -66,12 +69,18 @@ nav ul li a {
     align-items: center;
     justify-content: center;
 
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    transition: background 0.3s ease;
 }
 
-/* Nav shimmer text */
+/* Text shimmer */
 
 nav ul li a span {
+    position: relative;
+    z-index: 2;
+
     background: linear-gradient(
         90deg,
         #000000,
@@ -89,16 +98,40 @@ nav ul li a span {
     animation: shimmer 5s linear infinite;
 }
 
-/* Hover button */
+/* Button shimmer background */
 
-nav ul li a:hover {
-    background: black;
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        #000000,
+        #222222,
+        #555555,
+        #222222,
+        #000000
+    );
+
+    background-size: 300%;
+
+    opacity: 0;
+    z-index: 1;
+
+    transition: opacity 0.3s ease;
+}
+
+/* Hover */
+
+nav ul li a:hover::before {
+    opacity: 1;
+    animation: shimmer 3s linear infinite;
 }
 
 nav ul li a:hover span {
     -webkit-text-fill-color: white;
 }
-
 /* =========================
    MAIN CONTENT
 ========================= */
