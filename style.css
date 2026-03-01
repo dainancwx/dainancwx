@@ -222,33 +222,3 @@ nav ul li a:hover {
     background-position: 100% 0;
   }
 }
-
-nav ul li a span {
-    display: inline-block;
-
-    background: linear-gradient(
-        90deg,
-        #000000 0%,
-        #000000 40%,
-        #ffffff 50%,
-        #000000 60%,
-        #000000 100%
-    );
-
-    background-size: 200% 100%;
-    background-repeat: no-repeat;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: navShimmer 4s linear infinite;
-}
-
-@keyframes navShimmer {
-    from {
-        background-position: -100% 0;
-    }
-    to {
-        background-position: 100% 0;
-    }
-}
