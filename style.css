@@ -1,69 +1,103 @@
+/* =========================
+   BASE
+========================= */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #000000, #111111);
-  color: #333;
+  color: #000;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background: #ffffff;
   padding: 1.2rem 2.5rem;
   position: relative;
-  flex-direction: row !important; /* force one line */
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 50px;
-}
-
-header .logo-text {
+/* Logo text shimmer */
+.logo-text {
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 1px;
+  display: inline-block;
+
+  background: linear-gradient(
+    90deg,
+    #000000 0%,
+    #000000 40%,
+    #ffffff 50%,
+    #000000 60%,
+    #000000 100%
+  );
+
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shimmer 4s linear infinite;
 }
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav ul {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
-}
-
-nav ul li {
-  margin-left: 1rem;
+  gap: 1rem;
 }
 
 nav ul li a {
-  color: #000000;
   text-decoration: none;
   padding: 0.5rem 1rem;
   font-weight: bold;
-  transition: all 0.3s ease;
+  border-radius: 4px;
+  display: inline-block;
+
+  /* shimmer base */
+  background: linear-gradient(
+    90deg,
+    #000000 0%,
+    #000000 40%,
+    #ffffff 50%,
+    #000000 60%,
+    #000000 100%
+  );
+
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shimmer 4s linear infinite;
+  transition: background-color 0.3s ease;
 }
 
+/* Hover rectangle */
 nav ul li a:hover,
 nav ul li a.active {
   background-color: #000000;
-  color: white;
-  border-radius: 4px;
 }
 
-/* --- Main Content --- */
+/* =========================
+   MAIN CONTENT
+========================= */
+
 main {
   padding: 2rem;
 }
 
-/* --- Section Content Boxes --- */
 section {
-  background-color: #ffffff;
+  background: #ffffff;
   border-radius: 12px;
   padding: 2.5rem;
   margin: 3rem auto;
@@ -80,58 +114,37 @@ section h1::after {
   margin-top: 10px;
 }
 
-/* --- Footer --- */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #ffffff;
-  color: #001f3f;
-  margin-top: 2rem;
-}
-
-footer div a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* --- Black Text Styling --- */
 section, p, h1, h2, h3, li {
   color: #000000;
 }
 
 /* =========================
-   RESPONSIVE HEADER
+   FOOTER
 ========================= */
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ffffff;
+  margin-top: 2rem;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-/* Hide hamburger by default */
 .menu-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
-  /* Show hamburger */
   .menu-toggle {
     display: block;
   }
 
-  /* Remove nav from header row */
   nav {
     position: absolute;
     top: 100%;
@@ -139,7 +152,6 @@ header {
     width: 100%;
   }
 
-  /* Hide links by default */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -147,7 +159,6 @@ header {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   }
 
-  /* Show when active */
   .nav-links.active {
     display: flex;
   }
@@ -163,58 +174,11 @@ header {
   }
 }
 
-.shimmer-silver{
-    display: inline-block;
-    background: linear-gradient(
-        90deg,
-        #000000 0%,
-        #000000 40%,
-        #ffffff 50%,
-        #000000 60%,
-        #000000 100%
-    );
+/* =========================
+   SHIMMER ANIMATION
+========================= */
 
-    background-size: 200% 100%;
-    background-repeat: no-repeat;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: shimmerMove 4s linear infinite;
-}
-
-@keyframes shimmerMove{
-    from{
-        background-position: -100% 0;
-    }
-    to{
-        background-position: 100% 0;
-    }
-}
-
-nav ul li a:hover {
-  background-color: #000000;
-  border-radius: 4px;
-
-  background-image: linear-gradient(
-      90deg,
-      #ffffff 0%,
-      #000000 40%,
-      #ffffff 50%,
-      #000000 60%,
-      #ffffff 100%
-  );
-
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  animation: navShimmer 2s linear infinite;
-}
-
-@keyframes navShimmer {
+@keyframes shimmer {
   from {
     background-position: -100% 0;
   }
