@@ -1,6 +1,10 @@
 * {
     font-family: Arial, sans-serif;
 }
+
+nav ul li a {
+    font-family: Arial, sans-serif !important;
+}
 /* =========================
    BASE
 ========================= */
