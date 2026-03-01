@@ -47,7 +47,7 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shimmer 5s linear infinite;
+    animation: shimmer 8s linear infinite;
 }
 
 /* NAVIGATION */
@@ -86,7 +86,7 @@ nav ul li a span {
 
     color: white;
 
-    animation: shimmer 5s linear infinite;
+    animation: shimmer 8s linear infinite;
 
     background: linear-gradient(
         90deg,
@@ -121,7 +121,7 @@ nav ul li a::before {
     opacity: 1;
     z-index: 1;
 
-    animation: shimmer 6s linear infinite;
+    animation: shimmer 8s linear infinite;
 }
 
 /* ANIMATION */
